@@ -1,6 +1,6 @@
+import { MainLayout } from '@components/index';
+import { GigsPage, HomePage, NotFoundPage, SongsPage } from '@pages/index';
 import { createBrowserRouter } from 'react-router-dom';
-import { MainLayout } from '../components';
-import { GigsPage, HomePage, NotFoundPage, SongsPage } from '../pages';
 
 export const router = createBrowserRouter([
     {
