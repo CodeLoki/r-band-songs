@@ -1,0 +1,181 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "typescript.preferences.includePackageJsonAutoImports": "auto",
+        "typescript.suggest.autoImports": true,
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "explicit",
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[typescript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescriptreact]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[json]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "files.exclude": {
+            "**/node_modules": true,
+            "**/dist": true,
+            "**/.vite": true
+        },
+        "search.exclude": {
+            "**/node_modules": true,
+            "**/dist": true,
+            "**/.vite": true
+        },
+        "emmet.includeLanguages": {
+            "typescript": "html",
+            "typescriptreact": "html"
+        },
+        "emmet.triggerExpansionOnTab": true,
+        "path-intellisense.mappings": {
+            "@": "${workspaceRoot}/src"
+        },
+        "cSpell.words": ["setlist", "setlists"]
+    },
+    "extensions": {
+        "recommendations": [
+            "esbenp.prettier-vscode",
+            "dbaeumer.vscode-eslint",
+            "bradlc.vscode-tailwindcss",
+            "ms-vscode.vscode-typescript-next",
+            "christian-kohler.path-intellisense",
+            "formulahendry.auto-rename-tag",
+            "ms-vscode.vscode-json",
+            "burkeholland.simple-react-snippets",
+            "dsznajder.es7-react-js-snippets",
+            "firebase.vscode-firestore-rules",
+            "toba.vsfire"
+        ]
+    },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Launch Chrome",
+                "request": "launch",
+                "type": "chrome",
+                "url": "http://localhost:5173",
+                "webRoot": "${workspaceFolder}/src",
+                "sourceMaps": true
+            },
+            {
+                "name": "Attach to Chrome",
+                "port": 9222,
+                "request": "attach",
+                "type": "chrome",
+                "webRoot": "${workspaceFolder}/src",
+                "sourceMaps": true
+            }
+        ]
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "type": "shell",
+                "label": "dev",
+                "command": "npm",
+                "args": ["run", "dev"],
+                "group": "build",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "shared"
+                },
+                "isBackground": true,
+                "problemMatcher": {
+                    "owner": "vite",
+                    "fileLocation": "relative",
+                    "pattern": {
+                        "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "severity": 4,
+                        "message": 5
+                    }
+                }
+            },
+            {
+                "type": "shell",
+                "label": "build",
+                "command": "npm",
+                "args": ["run", "build"],
+                "group": "build",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "shared"
+                },
+                "problemMatcher": ["$tsc"]
+            },
+            {
+                "type": "shell",
+                "label": "preview",
+                "command": "npm",
+                "args": ["run", "preview"],
+                "group": "build",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "shared"
+                },
+                "dependsOn": "build"
+            },
+            {
+                "type": "shell",
+                "label": "lint",
+                "command": "npm",
+                "args": ["run", "lint"],
+                "group": "test",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "shared"
+                },
+                "problemMatcher": ["$eslint-stylish"]
+            },
+            {
+                "type": "shell",
+                "label": "test",
+                "command": "npm",
+                "args": ["run", "test"],
+                "group": "test",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "shared"
+                }
+            },
+            {
+                "type": "shell",
+                "label": "firebase:deploy",
+                "command": "firebase",
+                "args": ["deploy"],
+                "group": "build",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "shared"
+                }
+            }
+        ]
+    }
+}
