@@ -12,8 +12,8 @@
 
 ### 1.2 Development Environment
 
-- [ ] **1.2.1** Install and configure Elastic UI framework
-- [ ] **1.2.2** Set up React Router v7
+- [x] **1.2.1** Install and configure Material-UI (MUI) framework
+- [x] **1.2.2** Set up React Router v7
 - [ ] **1.2.3** Install additional dependencies (React Hook Form, date-fns, Firebase SDK)
 - [ ] **1.2.4** Configure TypeScript paths and absolute imports in `vite.config.ts`
 - [x] **1.2.5** Set up development scripts in package.json (already configured by Vite)
@@ -86,7 +86,7 @@
 
 - [ ] **4.2.1** Create `components/Forms/SongForm.tsx` with React Hook Form
 - [ ] **4.2.2** Create `components/Forms/GigForm.tsx` with date picker
-- [ ] **4.2.3** Create `components/Forms/FormField.tsx` wrapper for EUI inputs
+- [ ] **4.2.3** Create `components/Forms/FormField.tsx` wrapper for MUI inputs
 - [ ] **4.2.4** Create `components/Forms/ComboBox.tsx` searchable dropdown
 - [ ] **4.2.5** Add form validation schemas with Yup or Zod
 
@@ -181,7 +181,7 @@
 
 ### 8.1 Styling & Theme
 
-- [ ] **8.1.1** Implement dark theme with EUI
+- [ ] **8.1.1** Implement dark theme with MUI
 - [ ] **8.1.2** Create consistent spacing and typography
 - [ ] **8.1.3** Add responsive breakpoints
 - [ ] **8.1.4** Implement loading states for all async operations

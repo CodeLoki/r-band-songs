@@ -1,16 +1,16 @@
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
+import { router } from './router';
+import { theme } from './theme/theme';
 
 function App() {
     return (
-        <div className="app">
-            <header className="app-header">
-                <h1>Band Songs</h1>
-                <p>Welcome to the Band Songs React App</p>
-            </header>
-            <main className="app-main">
-                <p>Application content will be added here...</p>
-            </main>
-        </div>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <RouterProvider router={router} />
+        </ThemeProvider>
     );
 }
 

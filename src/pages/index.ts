@@ -1,2 +1,5 @@
 // Export all pages from this folder
-// This file will be populated as we create page components
+export { default as GigsPage } from './GigsPage';
+export { default as HomePage } from './HomePage';
+export { default as NotFoundPage } from './NotFoundPage';
+export { default as SongsPage } from './SongsPage';
