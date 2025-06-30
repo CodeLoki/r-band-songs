@@ -7,7 +7,7 @@
 - [x] **1.1.1** Create new React app with Vite and TypeScript template (`npm create vite@latest band-songs -- --template react-ts`)
 - [x] **1.1.2** Set up project structure and clean up default files
 - [x] **1.1.3** Configure ESLint and Prettier with TypeScript rules
-- [ ] **1.1.4** Set up Git repository locally and push initial React code to existing repo at https://github.com/CodeLoki/r-band-songs
+- [x] **1.1.4** Set up Git repository locally and push initial React code to existing repo at https://github.com/CodeLoki/r-band-songs
 - [x] **1.1.5** Set up basic folder structure (`src/components`, `src/pages`, `src/hooks`, `src/types`, `src/utils`)
 
 ### 1.2 Development Environment
