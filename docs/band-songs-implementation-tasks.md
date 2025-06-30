@@ -14,7 +14,7 @@
 
 - [x] **1.2.1** Install and configure Material-UI (MUI) framework
 - [x] **1.2.2** Set up React Router v7
-- [ ] **1.2.3** Install additional dependencies (React Hook Form, date-fns, Firebase SDK)
+- [x] **1.2.3** Install additional dependencies (React Hook Form, date-fns, Firebase SDK)
 - [x] **1.2.4** Configure TypeScript paths and absolute imports in `vite.config.ts`
 - [x] **1.2.5** Set up development scripts in package.json (already configured by Vite)
 - [ ] **1.2.6** Configure environment variables (.env files with VITE\_ prefix)
