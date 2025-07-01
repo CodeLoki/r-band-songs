@@ -1,3 +1,4 @@
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { router } from '@router/index';
@@ -9,7 +10,9 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <RouterProvider router={router} />
+            <ErrorBoundary>
+                <RouterProvider router={router} />
+            </ErrorBoundary>
         </ThemeProvider>
     );
 }

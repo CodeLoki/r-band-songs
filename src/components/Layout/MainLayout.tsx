@@ -1,9 +1,11 @@
+import { useBand } from '@/context';
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 export default function MainLayout() {
     const navigate = useNavigate();
     const location = useLocation();
+    const { currentBand, loading } = useBand();
 
     const navigationItems = [
         { label: 'Home', path: '/' },
@@ -16,7 +18,7 @@ export default function MainLayout() {
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Band Songs
+                        {loading ? 'Band Songs' : currentBand ? currentBand.description : 'Band Songs'}
                     </Typography>
                     <Box sx={{ display: 'flex', gap: 1 }}>
                         {navigationItems.map(item => (

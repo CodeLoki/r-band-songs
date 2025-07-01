@@ -52,17 +52,17 @@ This document outlines the tasks for creating the application defined in the [PR
 
 - [ ] **3.1.1** Create `context/AppContext.tsx` with global state
 - [ ] **3.1.2** Create `context/AuthContext.tsx` for authentication
-- [ ] **3.1.3** Create `context/BandContext.tsx` for band selection
+- [x] **3.1.3** Create `context/BandContext.tsx` for band selection
 - [ ] **3.1.4** Set up useReducer for complex state management
-- [ ] **3.1.5** Create custom hooks for context consumption
+- [x] **3.1.5** Create custom hooks for context consumption
 
 ### 3.2 URL Query Parameters & Routing
 
-- [ ] **3.2.1** Implement URL query parameter handling for band selection (`b` parameter)
-- [ ] **3.2.2** Set up default band ID fallback to `'qRphnEOTg8GeDc0dQa4K'` when `b` parameter is not provided
-- [ ] **3.2.3** Implement URL query parameter handling for user context (`u` parameter)
-- [ ] **3.2.4** Set up default user ID fallback to empty string `''` when `u` parameter is not provided
-- [ ] **3.2.5** Create `hooks/useQueryParams.ts` hook for reading and updating URL parameters
+- [x] **3.2.1** Implement URL query parameter handling for band selection (`b` parameter)
+- [x] **3.2.2** Set up default band ID fallback to `'qRphnEOTg8GeDc0dQa4K'` when `b` parameter is not provided
+- [x] **3.2.3** Implement URL query parameter handling for user context (`u` parameter)
+- [x] **3.2.4** Set up default user ID fallback to empty string `''` when `u` parameter is not provided
+- [x] **3.2.5** Create `hooks/useQueryParams.ts` hook for reading and updating URL parameters
 - [ ] **3.2.6** Ensure query parameters persist across route navigation
 - [ ] **3.2.7** Add React Router integration for deep linking with parameters
 - [ ] **3.2.8** Create utility functions for building URLs with correct parameters
