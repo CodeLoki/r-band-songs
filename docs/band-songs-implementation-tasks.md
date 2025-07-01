@@ -22,18 +22,15 @@ This document outlines the tasks for creating the application defined in the [PR
 
 ### 1.3 Firebase Setup
 
-- [ ] **1.3.1** Set up Firebase configuration using shell environment variables (no local config files)
-- [ ] **1.3.2** Configure required environment variables: VITE_FIREBASE_API_KEY, VITE_FIREBASE_AUTH_DOMAIN, VITE_FIREBASE_PROJECT_ID, VITE_FIREBASE_STORAGE_BUCKET, VITE_FIREBASE_MESSAGING_SENDER_ID, VITE_FIREBASE_APP_ID
-- [ ] **1.3.3** Create Firebase configuration service that reads from environment variables
-- [ ] **1.3.4** Configure Firebase hosting for the new React app with environment-specific deployments
-- [ ] **1.3.5** Set up Firebase functions integration (if existing functions are used)
-- [ ] **1.3.6** Document required environment variables in README.md for shell configuration
+- [ ] **1.3.1** Set up Firebase configuration using VITE_FIREBASE_API_KEY environment variable (other Firebase config values will be hardcoded in configuration)
+- [ ] **1.3.2** Create Firebase configuration service that reads API key from environment variables
+- [ ] **1.3.3** Document required environment variable (VITE_FIREBASE_API_KEY) in README.md for shell configuration
 
 ## Phase 2: Core Data Models & Types
 
 ### 2.1 TypeScript Interfaces
 
-- [ ] **2.1.1** Create `types/Song.ts` with Song interface (song length in seconds)
+- [ ] **2.1.1** Create `types/Song.ts` with Song interface
 - [ ] **2.1.2** Create `types/Gig.ts` with Gig interface
 - [ ] **2.1.3** Create `types/Band.ts` with Band interface
 - [ ] **2.1.4** Create `types/User.ts` with User interface and permissions
@@ -56,7 +53,7 @@ This document outlines the tasks for creating the application defined in the [PR
 - [ ] **2.3.4** Create `services/bands.ts` with read operations
 - [ ] **2.3.5** Create `services/auth.ts` with authentication methods
 - [ ] **2.3.6** Add error handling and TypeScript types for all services
-- [ ] **2.3.7** Add environment variable validation for Firebase configuration
+- [ ] **2.3.7** Add environment variable validation for Firebase API key configuration
 
 ## Phase 3: State Management & Context
 
@@ -292,11 +289,10 @@ This document outlines the tasks for creating the application defined in the [PR
 ### 13.1 Build & Deployment
 
 - [ ] **13.1.1** Set up production build optimization
-- [ ] **13.1.2** Configure Firebase hosting deployment with environment variable injection
+- [ ] **13.1.2** Configure deployment to hosting platform (Kinsta) with Firebase API key environment variable injection
 - [ ] **13.1.3** Set up environment-specific configurations for development, staging, and production
 - [ ] **13.1.4** Create deployment scripts and CI/CD pipeline with secure environment variable handling
 - [ ] **13.1.5** Set up domain and SSL certificates
-- [ ] **13.1.6** Configure deployment environment variables for Firebase in hosting platform
 
 ### 13.2 Monitoring & Analytics
 
