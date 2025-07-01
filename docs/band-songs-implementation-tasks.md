@@ -22,9 +22,9 @@ This document outlines the tasks for creating the application defined in the [PR
 
 ### 1.3 Firebase Setup
 
-- [ ] **1.3.1** Set up Firebase configuration using VITE_FIREBASE_API_KEY environment variable (other Firebase config values will be hardcoded in configuration)
-- [ ] **1.3.2** Create Firebase configuration service that reads API key from environment variables
-- [ ] **1.3.3** Document required environment variable (VITE_FIREBASE_API_KEY) in README.md for shell configuration
+- [x] **1.3.1** Set up Firebase configuration using VITE_FIREBASE_API_KEY environment variable (other Firebase config values will be hardcoded in configuration)
+- [x] **1.3.2** Create Firebase configuration service that reads API key from environment variables
+- [x] **1.3.3** Document required environment variable (VITE_FIREBASE_API_KEY) in README.md for shell configuration
 
 ## Phase 2: Core Data Models & Types
 
