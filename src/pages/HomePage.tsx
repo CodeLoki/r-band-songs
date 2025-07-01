@@ -82,25 +82,13 @@ export default function HomePage() {
                     >
                         {gigs.map(gig => (
                             <Card key={gig.id} sx={{ height: '100%' }}>
-                                <CardContent>
-                                    <Typography variant="h6" gutterBottom>
-                                        {gig.venue}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary" gutterBottom>
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <Typography variant="h5" gutterBottom>
                                         {formatDate(gig.date)}
                                     </Typography>
-                                    <Box sx={{ mt: 2 }}>
-                                        {gig.setOne && gig.setOne.length > 0 && (
-                                            <Typography variant="body2" gutterBottom>
-                                                Set One: {gig.setOne.length} songs
-                                            </Typography>
-                                        )}
-                                        {gig.setTwo && gig.setTwo.length > 0 && (
-                                            <Typography variant="body2" gutterBottom>
-                                                Set Two: {gig.setTwo.length} songs
-                                            </Typography>
-                                        )}
-                                    </Box>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {gig.venue}
+                                    </Typography>
                                 </CardContent>
                             </Card>
                         ))}
