@@ -63,9 +63,9 @@ This document outlines the tasks for creating the application defined in the [PR
 - [x] **3.2.3** Implement URL query parameter handling for user context (`u` parameter)
 - [x] **3.2.4** Set up default user ID fallback to empty string `''` when `u` parameter is not provided
 - [x] **3.2.5** Create `hooks/useQueryParams.ts` hook for reading and updating URL parameters
-- [ ] **3.2.6** Ensure query parameters persist across route navigation
-- [ ] **3.2.7** Add React Router integration for deep linking with parameters
-- [ ] **3.2.8** Create utility functions for building URLs with correct parameters
+- [x] **3.2.6** Ensure query parameters persist across route navigation
+- [x] **3.2.7** Add React Router integration for deep linking with parameters
+- [x] **3.2.8** Create utility functions for building URLs with correct parameters
 
 ### 3.3 Custom Hooks
 

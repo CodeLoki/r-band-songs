@@ -1,4 +1,5 @@
 import { useBand } from '@/context';
+import { buildUrlWithMergedParams } from '@/utils';
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
@@ -13,6 +14,11 @@ export default function MainLayout() {
         { label: 'Gigs', path: '/gigs' }
     ];
 
+    const navigateWithParams = (path: string) => {
+        const urlWithParams = buildUrlWithMergedParams(path, location.search);
+        void navigate(urlWithParams);
+    };
+
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
             <AppBar position="static">
@@ -25,7 +31,7 @@ export default function MainLayout() {
                             <Button
                                 key={item.path}
                                 color="inherit"
-                                onClick={() => void navigate(item.path)}
+                                onClick={() => navigateWithParams(item.path)}
                                 sx={{
                                     backgroundColor:
                                         location.pathname === item.path ? 'rgba(255,255,255,0.1)' : 'transparent'
