@@ -147,7 +147,29 @@ This document outlines the requirements for creating a React-based band manageme
 - **Production Deployment**: Environment variables will be configured in the hosting platform (Firebase Hosting, Vercel, etc.)
 - **Security**: No Firebase credentials stored in source code or committed configuration files
 
-#### 5.4 External Integrations
+#### 5.4 URL Query Parameters
+
+The application will support query parameters for deep linking and state management:
+
+- **Band Parameter (`b`)**:
+    - Optional query parameter: `?b=<bandId>`
+    - Default value: `'qRphnEOTg8GeDc0dQa4K'` (when parameter is not provided)
+    - Purpose: Specifies which band's data to display
+    - Example: `https://band-songs.example.com/?b=abc123xyz`
+
+- **User Parameter (`u`)**:
+    - Optional qsuery parameter: `?u=<userId>`
+    - Default value: `''` (empty string when parameter is not provided)
+    - Purpose: Identifies the current user context
+    - Example: `https://band-songs.example.com/?u=z&b=abc123xyz`
+
+- **Combined Usage**:
+    - Full URL example: `https://band-songs.example.com/?b=qRphnEOTg8GeDc0dQa4K&u=z`
+    - Default behavior: `https://band-songs.example.com/` (uses default band and empty user)
+    - React Router integration: Parameters persist across navigation
+    - State management: Parameters override default application state
+
+#### 5.5 External Integrations
 
 - **GrooveScribe** embedding for drum tablature
 - **YouTube** embedding for music references

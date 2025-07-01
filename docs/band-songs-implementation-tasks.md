@@ -1,4 +1,4 @@
-# Band Songs React App - Implementation Task List
+# Band Songs React App - Implementation
 
 This document outlines the tasks for creating the application defined in the [PRD](./band-songs-react-prd.md).
 
@@ -28,32 +28,25 @@ This document outlines the tasks for creating the application defined in the [PR
 
 ## Phase 2: Core Data Models & Types
 
-### 2.1 TypeScript Interfaces
+### 2.1 Enums & Types
 
-- [ ] **2.1.1** Create `types/Song.ts` with Song interface
-- [ ] **2.1.2** Create `types/Gig.ts` with Gig interface
-- [ ] **2.1.3** Create `types/Band.ts` with Band interface
-- [ ] **2.1.4** Create `types/User.ts` with User interface and permissions
-- [ ] **2.1.5** Create `types/AppState.ts` with global state interfaces
+- [x] **2.1.1** Create TypeScript interfaces for Band, Song, and Gig matching Firestore schema
+- [x] **2.1.2** Create StartsWith enum with numeric values (0-12)
+- [x] **2.1.3** Create DrumPad enum with numeric values (-1, 0-7)
+- [x] **2.1.4** Create ActionMode enum with numeric values (0-4)
+- [x] **2.1.5** Create User enum with string values for user identification
+- [ ] **2.1.6** Create `types/SongFilter.ts` types for filtering functionality
+- [ ] **2.1.7** Create `types/AppState.ts` with global state interfaces
 
-### 2.2 Enums & Types
+### 2.2 Firebase Data Layer
 
-- [ ] **2.2.1** Create `enums/StartsWith.ts` enum
-- [ ] **2.2.2** Create `enums/DrumPad.ts` enum and display map
-- [ ] **2.2.3** Create `enums/ActionMode.ts` enum
-- [ ] **2.2.4** Create `enums/User.ts` enum
-- [ ] **2.2.5** Create `types/SongFilter.ts` types
-- [ ] **2.2.6** Export all enums from `enums/index.ts`
-
-### 2.3 Firebase Data Layer
-
-- [ ] **2.3.1** Create `services/firebase.ts` with Firebase config using environment variables
-- [ ] **2.3.2** Create `services/songs.ts` with CRUD operations
-- [ ] **2.3.3** Create `services/gigs.ts` with CRUD operations
-- [ ] **2.3.4** Create `services/bands.ts` with read operations
-- [ ] **2.3.5** Create `services/auth.ts` with authentication methods
-- [ ] **2.3.6** Add error handling and TypeScript types for all services
-- [ ] **2.3.7** Add environment variable validation for Firebase API key configuration
+- [ ] **2.2.1** Create `services/firebase.ts` with Firebase config using environment variables
+- [ ] **2.2.2** Create `services/songs.ts` with CRUD operations
+- [ ] **2.2.3** Create `services/gigs.ts` with CRUD operations
+- [ ] **2.2.4** Create `services/bands.ts` with read operations
+- [ ] **2.2.5** Create `services/auth.ts` with authentication methods
+- [ ] **2.2.6** Add error handling and TypeScript types for all services
+- [ ] **2.2.7** Add environment variable validation for Firebase API key configuration
 
 ## Phase 3: State Management & Context
 
@@ -65,14 +58,25 @@ This document outlines the tasks for creating the application defined in the [PR
 - [ ] **3.1.4** Set up useReducer for complex state management
 - [ ] **3.1.5** Create custom hooks for context consumption
 
-### 3.2 Custom Hooks
+### 3.2 URL Query Parameters & Routing
 
-- [ ] **3.2.1** Create `hooks/useSongs.ts` for song management
-- [ ] **3.2.2** Create `hooks/useGigs.ts` for gig management
-- [ ] **3.2.3** Create `hooks/useBands.ts` for band operations
-- [ ] **3.2.4** Create `hooks/useAuth.ts` for authentication
-- [ ] **3.2.5** Create `hooks/useLocalStorage.ts` for persistence
-- [ ] **3.2.6** Create `hooks/useDebounce.ts` for search optimization
+- [ ] **3.2.1** Implement URL query parameter handling for band selection (`b` parameter)
+- [ ] **3.2.2** Set up default band ID fallback to `'qRphnEOTg8GeDc0dQa4K'` when `b` parameter is not provided
+- [ ] **3.2.3** Implement URL query parameter handling for user context (`u` parameter)
+- [ ] **3.2.4** Set up default user ID fallback to empty string `''` when `u` parameter is not provided
+- [ ] **3.2.5** Create `hooks/useQueryParams.ts` hook for reading and updating URL parameters
+- [ ] **3.2.6** Ensure query parameters persist across route navigation
+- [ ] **3.2.7** Add React Router integration for deep linking with parameters
+- [ ] **3.2.8** Create utility functions for building URLs with correct parameters
+
+### 3.3 Custom Hooks
+
+- [ ] **3.3.1** Create `hooks/useSongs.ts` for song management
+- [ ] **3.3.2** Create `hooks/useGigs.ts` for gig management
+- [ ] **3.3.3** Create `hooks/useBands.ts` for band operations
+- [ ] **3.3.4** Create `hooks/useAuth.ts` for authentication
+- [ ] **3.3.5** Create `hooks/useLocalStorage.ts` for persistence
+- [ ] **3.3.6** Create `hooks/useDebounce.ts` for search optimization
 
 ## Phase 4: Shared Components
 
