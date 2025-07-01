@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document outlines the requirements for creating a React-based band management application that helps musicians organize songs, manage setlists, and plan gigs. The application will be built based on the existing Ember.js version at [CodeLoki/band-songs](https://github.com/CodeLoki/band-songs).
+This document outlines the requirements for creating a React-based band management application that helps musicians organize songs, manage setlists, and plan gigs. The application will be built based on the existing Ember.js version at [CodeLoki/band-songs](https://github.com/CodeLoki/band-songs), which is hosted at [https://band-songs-1iddr.kinsta.page/](https://band-songs-1iddr.kinsta.page/). The new React application will also be hosted on Kinsta.
 
 ## Project Goals
 
@@ -27,7 +27,7 @@ This document outlines the requirements for creating a React-based band manageme
 - **Create, edit, and delete songs** with comprehensive metadata
 - **Song properties include**:
     - Title and artist
-    - Song length (in minutes)
+    - Song length (in seconds)
     - Starting musician/instrument
     - GrooveScribe drum tablature integration
     - YouTube Music links for reference
@@ -133,7 +133,21 @@ This document outlines the requirements for creating a React-based band manageme
 - **Real-time updates** for collaborative features
 - **Cloud Functions** for server-side logic if needed
 
-#### 5.3 External Integrations
+#### 5.3 Firebase Configuration
+
+- **Environment Variables**: Firebase configuration will be passed via shell environment variables rather than committed config files
+- **Required Environment Variables**:
+    - `VITE_FIREBASE_API_KEY`: Firebase project API key
+    - `VITE_FIREBASE_AUTH_DOMAIN`: Firebase authentication domain
+    - `VITE_FIREBASE_PROJECT_ID`: Firebase project ID
+    - `VITE_FIREBASE_STORAGE_BUCKET`: Firebase storage bucket
+    - `VITE_FIREBASE_MESSAGING_SENDER_ID`: Firebase messaging sender ID
+    - `VITE_FIREBASE_APP_ID`: Firebase application ID
+- **Development Setup**: Developers will set environment variables in their shell or use `.env.local` files (not committed to repo)
+- **Production Deployment**: Environment variables will be configured in the hosting platform (Firebase Hosting, Vercel, etc.)
+- **Security**: No Firebase credentials stored in source code or committed configuration files
+
+#### 5.4 External Integrations
 
 - **GrooveScribe** embedding for drum tablature
 - **YouTube** embedding for music references
@@ -148,7 +162,7 @@ interface Song {
     id: string;
     title: string;
     artist: string;
-    length: number; // in minutes
+    length: number; // in seconds
     startsWith: StartsWith; // enum
     groove: string; // GrooveScribe URL
     ytMusic: string; // YouTube video ID

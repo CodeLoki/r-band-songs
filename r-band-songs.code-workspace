@@ -41,7 +41,7 @@
         "path-intellisense.mappings": {
             "@": "${workspaceRoot}/src"
         },
-        "cSpell.words": ["setlist", "setlists"]
+        "cSpell.words": ["Firestore", "setlist", "setlists"]
     },
     "extensions": {
         "recommendations": [
