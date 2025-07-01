@@ -1,20 +1,26 @@
+import { useBand } from '@/context';
+import { useQueryParams } from '@/hooks';
 import { GigService } from '@/services';
 import type { Gig } from '@/types';
 import { Alert, Box, Card, CardContent, CircularProgress, Container, Typography } from '@mui/material';
 import type { Timestamp } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 export default function HomePage() {
-    const location = useLocation();
+    const { currentBand } = useBand();
+    const { getBandId, getUserId } = useQueryParams();
     const [gigs, setGigs] = useState<Gig[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Get URL parameters
-    const params = new URLSearchParams(location.search);
-    const currentBandId = params.get('b') || 'qRphnEOTg8GeDc0dQa4K';
-    const currentUserId = params.get('u') || '';
+    // Get URL parameters using the hook
+    const currentBandId = getBandId();
+    const currentUserId = getUserId();
+
+    // Update document title with band name
+    useEffect(() => {
+        document.title = currentBand?.description || 'Band Songs';
+    }, [currentBand]);
 
     // Fetch gigs for the current band
     useEffect(() => {

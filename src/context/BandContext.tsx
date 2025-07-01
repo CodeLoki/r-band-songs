@@ -1,7 +1,7 @@
+import { useQueryParams } from '@/hooks';
 import { BandService } from '@/services';
 import type { Band } from '@/types';
 import React, { useEffect, useState, type ReactNode } from 'react';
-import { useLocation } from 'react-router-dom';
 import { BandContext, type BandContextType } from './BandContextDefinition';
 
 interface BandProviderProps {
@@ -9,11 +9,14 @@ interface BandProviderProps {
 }
 
 export const BandProvider: React.FC<BandProviderProps> = ({ children }) => {
-    const location = useLocation();
+    const { getBandId, setBandId: setUrlBandId } = useQueryParams();
     const [currentBand, setCurrentBand] = useState<Band | null>(null);
     const [bands, setBands] = useState<Band[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
+    // Get current band ID from URL
+    const currentBandId = getBandId();
 
     // Load all bands on mount
     const loadBands = async () => {
@@ -45,10 +48,7 @@ export const BandProvider: React.FC<BandProviderProps> = ({ children }) => {
 
     // Set band ID in URL and update current band
     const setBandId = (bandId: string) => {
-        const params = new URLSearchParams(location.search);
-        params.set('b', bandId);
-        const newUrl = `${location.pathname}?${params.toString()}`;
-        window.history.replaceState({}, '', newUrl);
+        setUrlBandId(bandId);
         void loadCurrentBand(bandId);
     };
 
@@ -64,14 +64,8 @@ export const BandProvider: React.FC<BandProviderProps> = ({ children }) => {
 
     // Load current band when URL changes
     useEffect(() => {
-        const getBandId = (): string => {
-            const params = new URLSearchParams(location.search);
-            return params.get('b') || 'qRphnEOTg8GeDc0dQa4K';
-        };
-
-        const bandId = getBandId();
-        void loadCurrentBand(bandId);
-    }, [location.search]);
+        void loadCurrentBand(currentBandId);
+    }, [currentBandId]);
 
     const contextValue: BandContextType = {
         currentBand,
