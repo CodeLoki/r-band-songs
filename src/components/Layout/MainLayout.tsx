@@ -9,9 +9,8 @@ export default function MainLayout() {
     const { currentBand, loading } = useBand();
 
     const navigationItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Songs', path: '/songs' },
-        { label: 'Gigs', path: '/gigs' }
+        { label: 'Gigs', path: '/' },
+        { label: 'Songs', path: '/songs' }
     ];
 
     const navigateWithParams = (path: string) => {
