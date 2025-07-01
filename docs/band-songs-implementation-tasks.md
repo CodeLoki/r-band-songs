@@ -41,7 +41,7 @@ This document outlines the tasks for creating the application defined in the [PR
 ### 2.2 Firebase Data Layer
 
 - [ ] **2.2.1** Create `services/songs.ts` with CRUD operations
-- [ ] **2.2.2** Create `services/gigs.ts` with CRUD operations
+- [x] **2.2.2** Create `services/gigs.ts` with CRUD operations
 - [x] **2.2.3** Create `services/bands.ts` with read-only operations (no editing capabilities)
 - [ ] **2.2.4** Create `services/auth.ts` with authentication methods
 - [ ] **2.2.5** Add error handling and TypeScript types for all services
