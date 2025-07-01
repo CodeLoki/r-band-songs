@@ -8,14 +8,13 @@ import { useEffect, useState } from 'react';
 
 export default function HomePage() {
     const { currentBand } = useBand();
-    const { getBandId, getUserId } = useQueryParams();
+    const { getBandId } = useQueryParams();
     const [gigs, setGigs] = useState<Gig[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     // Get URL parameters using the hook
     const currentBandId = getBandId();
-    const currentUserId = getUserId();
 
     // Update document title with band name
     useEffect(() => {
@@ -100,22 +99,6 @@ export default function HomePage() {
                         ))}
                     </Box>
                 )}
-            </Box>
-            {/* Current Band and User Info */}
-            <Box sx={{ mt: 2, mb: 4 }}>
-                <Card>
-                    <CardContent>
-                        <Typography variant="h6" gutterBottom>
-                            Current Context
-                        </Typography>
-                        <Typography variant="body1" gutterBottom>
-                            Band ID: {currentBandId}
-                        </Typography>
-                        <Typography variant="body1" gutterBottom>
-                            User ID: {currentUserId || '(not set)'}
-                        </Typography>
-                    </CardContent>
-                </Card>
             </Box>
         </Container>
     );

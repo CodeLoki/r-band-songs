@@ -1,7 +1,9 @@
 import { useBand } from '@/context';
 import { buildUrlWithMergedParams } from '@/utils';
-import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
+import { Event, LibraryMusic } from '@mui/icons-material';
+import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { NavigationButton } from '../Navigation';
 
 export default function MainLayout() {
     const navigate = useNavigate();
@@ -9,8 +11,8 @@ export default function MainLayout() {
     const { currentBand, loading } = useBand();
 
     const navigationItems = [
-        { label: 'Gigs', path: '/' },
-        { label: 'Songs', path: '/songs' }
+        { label: 'Gigs', path: '/', icon: Event },
+        { label: 'Songs', path: '/songs', icon: LibraryMusic }
     ];
 
     const navigateWithParams = (path: string) => {
@@ -27,17 +29,14 @@ export default function MainLayout() {
                     </Typography>
                     <Box sx={{ display: 'flex', gap: 1 }}>
                         {navigationItems.map(item => (
-                            <Button
+                            <NavigationButton
                                 key={item.path}
-                                color="inherit"
+                                label={item.label}
+                                path={item.path}
+                                icon={item.icon}
+                                isActive={location.pathname === item.path}
                                 onClick={() => navigateWithParams(item.path)}
-                                sx={{
-                                    backgroundColor:
-                                        location.pathname === item.path ? 'rgba(255,255,255,0.1)' : 'transparent'
-                                }}
-                            >
-                                {item.label}
-                            </Button>
+                            />
                         ))}
                     </Box>
                 </Toolbar>
